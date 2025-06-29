@@ -1,0 +1,8 @@
+pillow
+appdirs
+
+[dev]
+pytest
+ruff
+build
+twine

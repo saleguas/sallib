@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/sallib/__init__.py
+src/sallib/resources.py
+src/sallib.egg-info/PKG-INFO
+src/sallib.egg-info/SOURCES.txt
+src/sallib.egg-info/dependency_links.txt
+src/sallib.egg-info/requires.txt
+src/sallib.egg-info/top_level.txt
+src/sallib/images/__init__.py
+src/sallib/images/manipulation.py
+src/sallib/paths/__init__.py

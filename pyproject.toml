@@ -14,7 +14,7 @@ authors         = [{ name = "Salvador Aleguas", email = "me@example.com" }]  # p
 requires-python = ">=3.9"                      # minimum Python version required
 
 # run-time deps - packages needed when your package is installed and used
-dependencies = ["pillow"]                       # core dependencies that auto-install with the package
+dependencies = ["pillow", "appdirs", "requests"]                       # core dependencies that auto-install with the package
 
 # Optional dependency groups that users can install with extras syntax
 [project.optional-dependencies]        # extras: pip install sallib[images]

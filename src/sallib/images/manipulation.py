@@ -1,7 +1,12 @@
 
+import os
+from pathlib import Path
 import subprocess
 import shlex
+from sallib.resources import gb
 
+# get the path to the magick binary
+MAGICK = gb("magick")
 
 def _run(cmd: str) -> str:
     """Run a shell command and return its stdout."""
@@ -57,10 +62,6 @@ def resize_image_to_target(image_path, target_w=940, target_h=1250, out_path=Non
         new_w = target_w
         new_h = int(new_h * scale_factor)
         print(f"Scaling both down: {overlay_w}x{overlay_h} -> {new_w}x{new_h}")
-    
-    # Set output path
-    if out_path is None:
-        out_path = os.path.join(OUTPUT_PATH, f"{src.stem}_resized.png")
     
     # Resize the image
     _run(f'{MAGICK} {shlex.quote(str(src))} -resize {new_w}x{new_h}! {shlex.quote(out_path)}')
