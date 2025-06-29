@@ -1,0 +1,29 @@
+# Build system configuration - defines tools needed to build the package
+[build-system]
+requires      = ["setuptools>=68", "wheel"]     # only the tools needed to *build* (not run) the package
+build-backend = "setuptools.build_meta"        # the build backend that handles the actual building
+
+# Main project metadata and configuration
+[project]
+name            = "saltools"                    # package name (used for pip install)
+version         = "0.1.0"                      # current version following semantic versioning
+description     = "Swiss-army helper toolkit for images, paths, and more."  # short description
+readme          = "README.md"                  # path to the README file for long description
+license         = { file = "LICENSE" }         # license file reference
+authors         = [{ name = "Salvador Aleguas", email = "me@example.com" }]  # package authors
+requires-python = ">=3.9"                      # minimum Python version required
+
+# run-time deps - packages needed when your package is installed and used
+dependencies = ["pillow"]                       # core dependencies that auto-install with the package
+
+# Optional dependency groups that users can install with extras syntax
+[project.optional-dependencies]        # extras: pip install saltools[images]
+dev    = ["pytest", "ruff", "build", "twine"]  # development tools: testing, linting, building, publishing
+
+# Setuptools-specific configuration
+[tool.setuptools]
+package-dir = { "" = "src" }           # tell setuptools that packages are in the src/ directory (src layout)
+
+# Package discovery configuration
+[tool.setuptools.packages.find]
+where = ["src"]                        # auto-discover subpackages in the src/ directory
