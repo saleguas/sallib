@@ -1,5 +1,6 @@
 pillow
 appdirs
+requests
 
 [dev]
 pytest
